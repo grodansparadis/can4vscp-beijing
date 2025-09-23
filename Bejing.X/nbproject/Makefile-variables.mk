@@ -1,0 +1,22 @@
+#
+# Generated - do not edit!
+#
+# NOCDDL
+#
+CND_BASEDIR=`pwd`
+# bejing_2580_debug configuration
+CND_ARTIFACT_DIR_bejing_2580_debug=dist/bejing_2580_debug/production
+CND_ARTIFACT_NAME_bejing_2580_debug=Bejing.X.production.hex
+CND_ARTIFACT_PATH_bejing_2580_debug=dist/bejing_2580_debug/production/Bejing.X.production.hex
+# bejing_2580_relocated configuration
+CND_ARTIFACT_DIR_bejing_2580_relocated=dist/bejing_2580_relocated/production
+CND_ARTIFACT_NAME_bejing_2580_relocated=Bejing.X.production.hex
+CND_ARTIFACT_PATH_bejing_2580_relocated=dist/bejing_2580_relocated/production/Bejing.X.production.hex
+# bejing_26k80_debug configuration
+CND_ARTIFACT_DIR_bejing_26k80_debug=dist/bejing_26k80_debug/production
+CND_ARTIFACT_NAME_bejing_26k80_debug=Bejing.X.production.hex
+CND_ARTIFACT_PATH_bejing_26k80_debug=dist/bejing_26k80_debug/production/Bejing.X.production.hex
+# bejing_26k80_relocated configuration
+CND_ARTIFACT_DIR_bejing_26k80_relocated=dist/bejing_26k80_relocated/production
+CND_ARTIFACT_NAME_bejing_26k80_relocated=Bejing.X.production.hex
+CND_ARTIFACT_PATH_bejing_26k80_relocated=dist/bejing_26k80_relocated/production/Bejing.X.production.hex

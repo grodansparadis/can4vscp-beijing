@@ -22,7 +22,7 @@ nickname. During normal operation this LED should light steady.
 Remember that there need to be <span class="underline">at least
 two</span> CAN4VSCP (or other CAN device set to 125kbps) devices (one
 additional) if you have the [Frankfurt
-RS-232](https://grodansparadis.github.io/can4vscp-frankfurt-rs232)
+RS-232](https://github.com/grodansparadis/can4vscp-frankfurt-rs232)
 or some other bus interface. A single device can't talk by
 itself on a bus. It's an error.
 

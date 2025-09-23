@@ -22,8 +22,8 @@
  * ******************************************************************************
  */
 
-#include "vscp_compiler.h"
-#include "vscp_projdefs.h"
+#include "vscp-compiler.h"
+#include "vscp-projdefs.h"
 
 #include <xc.h>
 #include <timers.h>
@@ -31,9 +31,9 @@
 #include <inttypes.h>
 #include <string.h>
 #include <ECAN.h>
-#include <vscp_firmware.h>
-#include <vscp_class.h>
-#include <vscp_type.h>
+#include <vscp-firmware.h>
+#include <vscp-class.h>
+#include <vscp-type.h>
 #include "beijing.h"
 #include "version.h"
 
