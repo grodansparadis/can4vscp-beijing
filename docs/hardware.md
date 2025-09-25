@@ -1,8 +1,8 @@
 
 ## Most current information
 
-You can find the most current information about the Accra module at it's repsitory <https://github.com/grodansparadis/can4vscp_accra> and in the documentation at 
-<https://grodansparadis.github.io/can4vscp_accra>. In the repository you can
+You can find the most current information about the Accra module at it's repsitory <https://github.com/grodansparadis/can4vscp-accra> and in the documentation at 
+<https://grodansparadis.github.io/can4vscp-accra>. In the repository you can
 also find links to the latest firmware, drivers and schematics etc for
 its use. You can find links to where you can buy ready made modules here.
 

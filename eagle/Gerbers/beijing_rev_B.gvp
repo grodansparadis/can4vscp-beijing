@@ -9,5 +9,5 @@
 (define-layer! 2 (cons 'filename "beijing_rev_B.milling")(cons 'visible #f)(cons 'color #(53456 63993 52428)))
 (define-layer! 1 (cons 'filename "beijing_rev_B.drd")(cons 'visible #f)(cons 'color #(60652 49858 62194))(cons 'attribs (list (list 'autodetect 'Boolean 1) (list 'zero_supression 'Enum 0) (list 'units 'Enum 0) (list 'digits 'Integer 4))))
 (define-layer! 0 (cons 'filename "beijing_rev_B.cmp")(cons 'visible #f)(cons 'color #(65021 53970 52942)))
-(define-layer! -1 (cons 'filename "C:/Users/grodansparadis/development/vscp_hardware/can4vscp/can4vscp_beijing_general_io/eagle/Gerbers")(cons 'visible #f)(cons 'color #(0 0 0)))
+(define-layer! -1 (cons 'filename "C:/Users/grodansparadis/development/vscp_hardware/can4vscp/can4vscp-beijing_general_io/eagle/Gerbers")(cons 'visible #f)(cons 'color #(0 0 0)))
 (set-render-type! 2)

@@ -21,7 +21,7 @@ This project is part of the <a href="http://www.vscp.org">VSCP (Very Simple Cont
 ## Project files
 
 ### User manual
-  * [User Manual](https://grodansparadis.github.io/can4vscp_beijing/#)
+  * [User Manual](https://grodansparadis.github.io/can4vscp-beijing/#)
 
 ### Schematic, PCB, 3D files etc
   * [Schematics reversion B](./eagle/beijing_sch_rev_B.png)
@@ -33,14 +33,14 @@ This project is part of the <a href="http://www.vscp.org">VSCP (Very Simple Cont
 
  The firmware is developed in [MPLAB X IDE](https://www.microchip.com/mplab/mplab-x-ide) using the [XC8 compiler](https://www.microchip.com/mplab/compilers).
 
-  * Binary release files is available [here](https://github.com/grodansparadis/can4vscp_beijing/releases)
+  * Binary release files is available [here](https://github.com/grodansparadis/can4vscp-beijing/releases)
 
 ### MDF - Module Description File(s)
   * [MDF file version: 9 Release date: 2020-05-14](http://www.eurosource.se/beijing_2.xml)
   * [MDF file version: 1.0.0 Release date: 2015-06-15](http://www.eurosource.se/beijing_1.xml)
 
 ### Support
-If you need support, please open an issue in the [GitHub repository](https://github.com/grodansparadis/can4vscp_kelvin_ntc10k/issues).
+If you need support, please open an issue in the [GitHub repository](https://github.com/grodansparadis/can4vscp-kelvin_ntc10k/issues).
 
 ### Buy a ready made modules
 You can buy a ready made module from [Grodans Paradis](http://www.grodansparadis.com).

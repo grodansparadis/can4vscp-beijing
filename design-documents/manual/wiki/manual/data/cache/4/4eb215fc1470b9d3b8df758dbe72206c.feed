@@ -15,7 +15,7 @@
         <items>
             <rdf:Seq>
                 <rdf:li rdf:resource="http://www.grodansparadis.com/beijing/manual/doku.php?id=alarms&amp;rev=1447348515&amp;do=diff"/>
-                <rdf:li rdf:resource="http://www.grodansparadis.com/beijing/manual/doku.php?id=can4vscp_cabling&amp;rev=1447348476&amp;do=diff"/>
+                <rdf:li rdf:resource="http://www.grodansparadis.com/beijing/manual/doku.php?id=can4vscp-cabling&amp;rev=1447348476&amp;do=diff"/>
                 <rdf:li rdf:resource="http://www.grodansparadis.com/beijing/manual/doku.php?id=change_log_1&amp;rev=1454602325&amp;do=diff"/>
                 <rdf:li rdf:resource="http://www.grodansparadis.com/beijing/manual/doku.php?id=data_coding&amp;rev=1425314664&amp;do=diff"/>
                 <rdf:li rdf:resource="http://www.grodansparadis.com/beijing/manual/doku.php?id=decision_matrix&amp;rev=1425314664&amp;do=diff"/>
@@ -55,11 +55,11 @@
         <description>Alarms
  Bit Description  0  Protection timer elapsed.  1  An input bit has gone high and the alarm condition for it is enabled.  2  An input bit has gone low and the alarm condition for it is enabled.  3  Reserved  4  Reserved  5  Reserved  6  Reserved</description>
     </item>
-    <item rdf:about="http://www.grodansparadis.com/beijing/manual/doku.php?id=can4vscp_cabling&amp;rev=1447348476&amp;do=diff">
+    <item rdf:about="http://www.grodansparadis.com/beijing/manual/doku.php?id=can4vscp-cabling&amp;rev=1447348476&amp;do=diff">
         <dc:format>text/html</dc:format>
         <dc:date>2015-11-12T18:14:36+01:00</dc:date>
-        <title>can4vscp_cabling</title>
-        <link>http://www.grodansparadis.com/beijing/manual/doku.php?id=can4vscp_cabling&amp;rev=1447348476&amp;do=diff</link>
+        <title>can4vscp-cabling</title>
+        <link>http://www.grodansparadis.com/beijing/manual/doku.php?id=can4vscp-cabling&amp;rev=1447348476&amp;do=diff</link>
         <description>CAN4VSCP Cabling
 
 Cable length

@@ -17,11 +17,11 @@ All VSCP modules contains information of there own setup, manual, hardware versi
 
 When they are started up they have a default functionality that often is all that is needed to get a working setup. If the module have something to report it will send you an event and if it is setup to react on a certain type of event it will do it's work when you send event(s) to it. 
 
-* [Repository for the module](https://github.com/grodansparadis/can4vscp_bejing)
-  * This manual is available [here](https://grodansparadis.github.io/can4vscp_beijing/)
-  * Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp_beijing/tree/master/eagle)
-  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp_beijing/tree/master/firmware)
-  * [MDF for the module](https://github.com/grodansparadis/can4vscp_beijing/tree/master/mdf)
+* [Repository for the module](https://github.com/grodansparadis/can4vscp-bejing)
+  * This manual is available [here](https://grodansparadis.github.io/can4vscp-beijing/)
+  * Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp-beijing/tree/master/eagle)
+  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp-beijing/tree/master/firmware)
+  * [MDF for the module](https://github.com/grodansparadis/can4vscp-beijing/tree/master/mdf)
 
 
 ## VSCP

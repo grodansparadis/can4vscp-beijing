@@ -1,6 +1,6 @@
 ====== Change Log for Beijing ======
 
-For firmware changes see [[https://github.com/grodansparadis/can4vscp_beijing/blob/master/HISTORY.txt|HISTORY]] \\ 
+For firmware changes see [[https://github.com/grodansparadis/can4vscp-beijing/blob/master/HISTORY.txt|HISTORY]] \\ 
 
 ===== Documentation changes =====
 

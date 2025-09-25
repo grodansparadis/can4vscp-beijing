@@ -1,7 +1,7 @@
 # Change Log for Accra
 
 Change log for the module is at
-[here](https://github.com/grodansparadis/can4vscp_accra/blob/master/HISTORY.txt)
+[here](https://github.com/grodansparadis/can4vscp-accra/blob/master/HISTORY.txt)
 
 | Date | By | Description |
 | ---- | -- | ----------  |
