@@ -1,20 +1,70 @@
 
 
 The full functionality of the decision matrix is explained [in the
-specification](http://www.vscp.org/docs/vscpspec/doku.php?id=decision_matrix).
+specification](https://grodansparadis.github.io/vscp-doc-spec/#/./vscp_decision_matrix).
 
-The module have a decision matrix consisting of eight entries. This
-matrix can be used to control the I/O channels. Possible actions are
-listed in the table below.
+The easiest way to edit the decision matrix of a device is to use
+[VSCPWorks](https://grodansparadis.github.io/vscp-works-qt/#/).
 
-| Action     | Action code | Parameter   | Description                                                                                  |
-| ---------- | ----------- | ----------- | -------------------------------------------------------------------------------------------- |
-| **NOOP**   | 0           | Not used    | No operation. Will do absolutely nothing.                                                    |
-| **START**  | 1           | Counter 0-3 | Start counter.                                                                               |
-| **STOP**   | 2           | Counter 0-3 | Stop counter.                                                                                |
-| **CLEAR**  | 3           | Counter 0-3 | Set counter to zero.                                                                         |
-| **RELOAD** | 4           | Counter 0-3 | Reload counter value.                                                                        |
-| **COUNT**  | 5           | Counter 0-3 | Count one step for the selected counter. Up or down depends on the settings for the counter. |
+Beijing have a decision matrix consisting of eight entries. This matrix
+can be used to control the I/O channels. Possible actions are listed in
+the table below.
 
-  
+| Action           | Action code   | Parameter       | Description |
+| ---------------- | --- | --------------- | ----------- |
+| **NOOP**         | 0             | Not used        | No operation. Will do absolutely nothing.|
+| **SET**          | 1             | Channel (0-9)   | Set output of I/O channel high.<br><br>Set the output of the I/O channel given by the argument to its high state. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9.|
+| **CLR**          | 2             | Channel (0-9)   | Set output of I/O channel low.<br><br>Set the output of the I/O channel given by the argument to its low state. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9.|
+| **PULSEON**     | 3             | Channel (0-9)   | Turn on pulse on output I/O channel.<br><br>Turn on pulse output on the output I/O channel given by the argument. The argument is an the range 0-9. Does not have any meaning for a channel set as input.|
+| **PULSEOFF**     | 4             | Channel (0-9)   | Turn off pulse on output I/O channel.|<br><br>Turn off pulse output on the output I/O channel given by the argument. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9. Does not have any meaning for a channel set as input.|
+| **TOGGLE**       | 5             | Channel (0-9)   | Toggle output for channel.<br><br>Toggle output four output I/O channel given by argument. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9. Does not have any meaning for a channel set as input.|
+| **STATUS**       | 6             | Channel (0-9)   | Send status for I/O channel.<br><br>Send status for an I/O channel given by the argument. The argument is an integer where 0 is output 0 and so on and can be in the range 0-9.<br><br>For a channel set as output the status is the output applied and for a channel set as input the actual input state.
+| **STATUSALL**    | 7             | Not used        | Send status for all I/O channels.<br><br>Send status for all I/O channels starting with channel 0 and then taking each channel up to channel 9.
+| **SHORTPULSE**   | 8             | Channel (0-9)   | Send a short pulse, with a duration set in register 0:47, on the selected output(s).|
+
+## Example
+
+You want to activate output on channel 3 when a [CLASS1.CONTROL, TurnOn,
+Type=5 event](https://grodansparadis.github.io/vscp-doc-spec/#/./class1.control?id=type5) is received.
+
+A matrix row consist of
+
+  | Byte |  Description |
+  |------|---------------|
+  | 0    | oaddr        |
+  | 1    | flags        |
+  | 2    | class-mask  |
+  | 3    | class-filter|
+  | 4    | type-mask   |
+  | 5    | type-filter |
+  | 6    | Action code |
+  | 7    | Action parameter |
+
+So for example if you populate the row with the following values
+
+  | Byte | Value      | Description
+  |------|------------|------------------
+  | 0    | **0x00**  | oaddr
+  | 1    | **0x80**  | flags
+  | 2    | **0xff**  | class-mask
+  | 3    | **0x1e**  | class-filter
+  | 4    | **0xff**  | type-mask
+  | 5    | **0x05**  | type-filter
+  | 6    | **0x01**  | Action code
+  | 7    | **0x02**  | Action parameter
+
+-   **oaddr** set to zero as i is not used.
+-    **flags** have one bit set. Enable row. We could have set bit 4
+    Match Zone to test zone also trigger DM.
+-   **class-mask** is set to 0xff as we have just one event we will
+    trigger on.
+-   **class-filter** is set to CLASS1.CONTROL.
+-   **type-mask** is set to 0xff as we have just one event we will
+    trigger on.
+-   **type-filter** is set to 5 which is TurnOn.
+-   **Action code** i set to the SET action.
+-   **Action parameter** 2 is channel 2 so this channel will be set high
+    if configured as an output.
+
+
 [filename](./bottom-copyright.md ':include')

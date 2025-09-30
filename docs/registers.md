@@ -1,535 +1,146 @@
-# Registers
+
 
 ## Page 0
 
-### Zone information
+## Zone/subzone info
 
-| Register | Page | Description                         |
-| -------- | ---- | ----------------------------------- |
-| 0        | 0    | The zone this module belongs to     |
-| 1        | 0    | The sub zone this module belongs to |
-| 2        | 0    | Sub zone for channel 0              |
-| 3        | 0    | Sub zone for channel 1              |
-| 4        | 0    | Sub zone for channel 2              |
-| 5        | 0    | Sub zone for channel 3              |
+  | Register |  Page   | Description |
+  |----------|---------|------------------------------------- |
+  | 0        | 0       | The zone this module belongs to    |
+  | 1        | 0       | The sub zone this module belongs to |
+  | 2        | 0       | Sub zone for I/O channel 0         |
+  | 3        | 0       | Sub zone for I/O channel 1         |
+  | 4        | 0       | Sub zone for I/O channel 2         |
+  | 5        | 0       | Sub zone for I/O channel 3         |
+  | 6        | 0       | Sub zone for I/O channel 4         |
+  | 7        | 0       | Sub zone for I/O channel 5         |
+  | 8        | 0       | Sub zone for I/O channel 6         |
+  | 9        | 0       | Sub zone for I/O channel 7         |
+  | 10       | 0       | Sub zone for I/O channel 8         |
+  | 11       | 0       | Sub zone for I/O channel 9         |
 
-### Control registers for counters
+## I/O direction
 
-<table>
-<thead>
-<tr class="header">
-<th>Register</th>
-<th>Page</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>6</td>
-<td>0</td>
-<td>Control register for channel 0 counter<br />
-<br />
-<strong>Bit 0</strong> - Counting direction (0=up/1=down).<br />
-<strong>Bit 1</strong> - Enable alarm level.<br />
-<strong>Bit 2</strong> - Reload value on zero.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable counter.</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>0</td>
-<td>Control register for channel 1 counter<br />
-<br />
-<strong>Bit 0</strong> - Counting direction (0=up/1=down).<br />
-<strong>Bit 1</strong> - Enable alarm level.<br />
-<strong>Bit 2</strong> - Reload value on zero.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable counter.</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>0</td>
-<td>Control register for channel 2 counter<br />
-<br />
-<strong>Bit 0</strong> - Counting direction (0=up/1=down).<br />
-<strong>Bit 1</strong> - Enable alarm level.<br />
-<strong>Bit 2</strong> - Reload value on zero.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable counter.</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>0</td>
-<td>Control register for channel 3 counter<br />
-<br />
-<strong>Bit 0</strong> - Counting direction (0=up/1=down).<br />
-<strong>Bit 1</strong> - Enable alarm level.<br />
-<strong>Bit 2</strong> - Reload value on zero.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable counter.</td>
-</tr>
-</tbody>
-</table>
+  | Register |  Page   | Description |
+  |----------|---------|---------------------------------------------------------------------------------------------------|
+  | 12       | 0       | **I/O direction (channels 8 and 9) MSB**<br>Most significant part of I/O directions register. Set bit to zero for output and one for input.<br>**Bit 7** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 5** - Reserved.<br>**Bit 4** - Reserved.<br>**Bit 3** - Reserved.<br>**Bit 2** - Reserved.<br>**Bit 1** - Direction for I/O channel 9.<br>**Bit 0** - Direction for I/O channel 8. |
+  | 13       | 0       | **I/O direction (channels 0-7) LSB**<br>Least significant part of I/O directions register. Set bit to zero for output and one for input.<br>**Bit 7** - Direction for I/O channel 7.<br>**Bit 6** - Direction for I/O channel 6.<br>**Bit 5** - Direction for I/O channel 5.<br>**Bit 4** - Direction for I/O channel 4.<br>**Bit 3** - Direction for I/O channel 3.<br>**Bit 2** - Direction for I/O channel 2.<br>**Bit 1** - Direction for I/O channel 1.<br>**Bit 0** - Direction for I/O channel 0. |
+  |----------|---------|---------------------------------------------------------------------------------------------------|
+  | 12       | 0       | **I/O direction (channels 8 and 9) MSB**<br>Most significant part of I/O directions register. Set bit to zero for output and one for input.<br>**Bit 7** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 5** - Reserved.<br>**Bit 4** - Reserved.<br>**Bit 3** - Reserved.<br>**Bit 2** - Reserved.<br>**Bit 1** - Direction for I/O channel 9.<br>**Bit 0** - Direction for I/O channel 8. |  |
+  | 13       | 0       | **I/O direction (channels 0-7) LSB**<br>Least significant part of I/O directions register. Set bit to zero for output and one for input.<br>**Bit 7** - Direction for I/O channel 7.<br>**Bit 6** - Direction for I/O channel 6.<br>**Bit 5** - Direction for I/O channel 5.<br>**Bit 4** - Direction for I/O channel 4.<br>**Bit 3** - Direction for I/O channel 3.<br>**Bit 2** - Direction for I/O channel 2.<br>**Bit 1** - Direction for I/O channel 1.<br>**Bit 0** - Direction for I/O channel 0. |  |  |
+  | 13       | 0       | **I/O direction (channels 0-7) LSB**<br>Least significant part of I/O directions register. Set bit to zero for output and one for input.<br>**Bit 7** - Direction for I/O channel 7.<br>**Bit 6** - Direction for I/O channel 6.<br>**Bit 5** - Direction for I/O channel 5.<br>**Bit 4** - Direction for I/O channel 4.<br>**Bit 3** - Direction for I/O channel 3.<br>**Bit 2** - Direction for I/O channel 2.<br>**Bit 1** - Direction for I/O channel 1.<br>**Bit 0** - Direction for I/O channel 0. |  |  | 
+                   
 
-### Control registers for frequency
+## I/O Status registers
 
-<table>
-<thead>
-<tr class="header">
-<th>Register</th>
-<th>Page</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>10</td>
-<td>0</td>
-<td>Control register for channel 0 frequency<br />
-<br />
-<strong>Bit 0</strong> - Enable frequency low alarm.<br />
-<strong>Bit 1</strong> - Enable frequency high alarm.<br />
-<strong>Bit 2</strong> - Reserved.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable frequency measurements.</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>0</td>
-<td>Control register for channel 1 frequency<br />
-<br />
-<strong>Bit 0</strong> - Enable frequency low alarm.<br />
-<strong>Bit 1</strong> - Enable frequency high alarm.<br />
-<strong>Bit 2</strong> - Reserved.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable frequency measurements.</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>0</td>
-<td>Control register for channel 2 frequency<br />
-<br />
-<strong>Bit 0</strong> - Enable frequency low alarm.<br />
-<strong>Bit 1</strong> - Enable frequency high alarm.<br />
-<strong>Bit 2</strong> - Reserved.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable frequency measurements.</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>0</td>
-<td>Control register for channel 3 frequency<br />
-<br />
-<strong>Bit 0</strong> - Enable frequency low alarm.<br />
-<strong>Bit 1</strong> - Enable frequency high alarm.<br />
-<strong>Bit 2</strong> - Reserved.<br />
-<strong>Bit 3</strong> - Reserved.<br />
-<strong>Bit 4</strong> - Reserved.<br />
-<strong>Bit 5</strong> - Reserved.<br />
-<strong>Bit 6</strong> - Reserved.<br />
-<strong>Bit 7</strong> - Enable frequency measurements.</td>
-</tr>
-</tbody>
-</table>
 
-### Counter reset
+ | Register |  Page |  Description |
+ |----------|-------|------------------------|
+ | 14       | 0     | **I/O channel 0 status register**<br>Read or write the state of I/O channel 0 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 15       | 0     | **I/O channel 1 status register**<br>Read or write the state of I/O channel 1 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 16       | 0     | **I/O channel 2 status register**<br>Read or write the state of I/O channel 2 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 17       | 0     | **I/O channel 3 status register**<br>Read or write the state of I/O channel 3 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 18       | 0     | **I/O channel 4 status register**<br>Read or write the state of I/O channel 4 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 19       | 0     | **I/O channel 5 status register**<br>Read or write the state of I/O channel 5 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 20       | 0     | **I/O channel 6 status register**<br>Read or write the state of I/O channel 6 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 21       | 0     | **I/O channel 7 status register**<br>Read or write the state of I/O channel 7 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 22       | 0     | **I/O channel 8 status register**<br>Read or write the state of I/O channel 8 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. |
+  | 23       | 0     | **I/O channel 9 status register**<br>Read or write the state of I/O channel 9 in this register.<br>**0** - is returned for an inactive input or a low output. A written zero will set an output channel low.<br>**1** - is returned for an active input or a high output. A written one will set an output channel high. | 
 
-<table>
-<thead>
-<tr class="header">
-<th>Register</th>
-<th>Page</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>14</td>
-<td>0</td>
-<td>Reset channel 0 counter<br />
-Reset counter 0 by writing 0x55 to this register. Will read back as zero for all values except 0x55.</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>0</td>
-<td>Reset channel 1 counter<br />
-Reset counter 1 by writing 0x55 to this register. Will read back as zero for all values except 0x55.</td>
-</tr>
-<tr class="odd">
-<td>16</td>
-<td>0</td>
-<td>Reset channel 2 counter<br />
-Reset counter 2 by writing 0x55 to this register. Will read back as zero for all values except 0x55.</td>
-</tr>
-<tr class="even">
-<td>17</td>
-<td>0</td>
-<td>Reset channel 3 counter<br />
-Reset counter 3 by writing 0x55 to this register. Will read back as zero for all values except 0x55.</td>
-</tr>
-</tbody>
-</table>
 
-### Counters
+## Output control registers
 
-| Register | Page | Description            |
-| -------- | ---- | ---------------------- |
-| 18       | 0    | 32-bit counter 0 (MSB) |
-| 19       | 0    | 32-bit counter 0       |
-| 20       | 0    | 32-bit counter 0       |
-| 21       | 0    | 32-bit counter 0 (LSB) |
-| 22       | 0    | 32-bit counter 1 (MSB) |
-| 23       | 0    | 32-bit counter 1       |
-| 24       | 0    | 32-bit counter 1       |
-| 25       | 0    | 32-bit counter 1 (LSB) |
-| 26       | 0    | 32-bit counter 2 (MSB) |
-| 27       | 0    | 32-bit counter 2       |
-| 28       | 0    | 32-bit counter 2       |
-| 29       | 0    | 32-bit counter 2 (LSB) |
-| 30       | 0    | 32-bit counter 3 (MSB) |
-| 31       | 0    | 32-bit counter 3       |
-| 32       | 0    | 32-bit counter 3       |
-| 33       | 0    | 32-bit counter 3 (LSB) |
+ | Register |  Page |  Description |
+ |----------|-------|------------------------|
+ | 24       | 0     | **Output 0 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.**Bit 0** - Enable pulse.<br><br> **Bit 1** - If set: Alarm sent when protection timer triggers.<br> **Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state <br> **Bit 4** - Send Off event when output goes to inactive state.<br> **Bit 5** - Reserved.<br> **Bit 6** - Reserved.<br> **Bit 7** - Enable output.<br>**Bit 7** - Enable output. |
+ | 25       | 0     | **Output 1 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 26       | 0     | **Output 2 control register**<br><br> The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 27       | 0     | **Output 3 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 28       | 0     | **Output 4 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.  <br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 29       | 0     | **Output 5 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.|<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 30       | 0     | **Output 6 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 31       | 0     | **Output 7 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 32       | 0     | **Output 8 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
+  | 33       | 0     | **Output 9 control register**<br><br>The output control bits enable/disable intelligent functionality for a channel set as output.<br><br>**Bit 0** - Enable pulse.<br>**Bit 1** - If set: Alarm sent when protection timer triggers.<br>**Bit 2** - Protection timer enable.<br>**Bit 3** - Send On event when output goes to active state.<br>**Bit 4** - Send Off event when output goes to inactive state.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable output.|
 
-### Counter alarm level
 
-| Register | Page | Description                        |
-| -------- | ---- | ---------------------------------- |
-| 34       | 0    | 32-bit counter 0 alarm level (MSB) |
-| 35       | 0    | 32-bit counter 0 alarm level       |
-| 36       | 0    | 32-bit counter 0 alarm level       |
-| 37       | 0    | 32-bit counter 0 alarm level (LSB) |
-| 38       | 0    | 32-bit counter 1 alarm level (MSB) |
-| 39       | 0    | 32-bit counter 1 alarm level       |
-| 40       | 0    | 32-bit counter 1 alarm level       |
-| 41       | 0    | 32-bit counter 1 alarm level (LSB) |
-| 42       | 0    | 32-bit counter 2 alarm level (MSB) |
-| 43       | 0    | 32-bit counter 2 alarm level       |
-| 44       | 0    | 32-bit counter 2 alarm level       |
-| 45       | 0    | 32-bit counter 2 alarm level (LSB) |
-| 46       | 0    | 32-bit counter 3 alarm level (MSB) |
-| 47       | 0    | 32-bit counter 3 alarm level       |
-| 48       | 0    | 32-bit counter 3 alarm level       |
-| 49       | 0    | 32-bit counter 3 alarm level (LSB) |
+## Input control registers
 
-### Counter reload value
+  | Register   | Page   | Description |
+  | ---------- | ------ | ----------- |
+  | 34         | 0      | **Input 0 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input. |
+  | 35         | 0      | **Input 1 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 36         | 0      | **Input 2 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.\ <br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 37         | 0      | **Input 3 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 38         | 0      | **Input 4 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 39         | 0      | **Input 5 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 40         | 0      | **Input 6 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 41         | 0      | **Input 7 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button input mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 42         | 0      | **Input 8 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
+  | 43         | 0      | **Input 9 control register**<br><br>The input control bits enable/disable intelligent functionality for a channel set as input.<br><br>**Bit 0** - Send On/TurnOn event when input goes to active state.<br>**Bit 1** - Send Off/TurnOff event when input goes to inactive state.<br>**Bit 2** - 0 = Send On/off events. 1=Send turnon/turnoff events (if activated). The bit have a different meaning in button input mode where 0 = TurnOn and 1 = TurnOff.<br>**Bit 3** - Alarm event sent if input goes low.<br>**Bit 4** - Alarm event sent if input goes high.<br>**Bit 5** - Continuous alarm.<br>**Bit 6** - Activate Button imput mode. Only TurnOff or TurnOn is sent when an input goes low and button input mode is activated.<br>**Bit 7** - Enable input.|
 
-| Register | Page | Description                         |
-| -------- | ---- | ----------------------------------- |
-| 50       | 0    | 32-bit counter 0 reload value (MSB) |
-| 51       | 0    | 32-bit counter 0 reload value       |
-| 52       | 0    | 32-bit counter 0 reload value       |
-| 53       | 0    | 32-bit counter 0 reload value (LSB) |
-| 54       | 0    | 32-bit counter 1 reload value (MSB) |
-| 55       | 0    | 32-bit counter 1 reload value       |
-| 56       | 0    | 32-bit counter 1 reload value       |
-| 57       | 0    | 32-bit counter 1 reload value (LSB) |
-| 58       | 0    | 32-bit counter 2 reload value (MSB) |
-| 59       | 0    | 32-bit counter 2 reload value       |
-| 60       | 0    | 32-bit counter 2 reload value       |
-| 61       | 0    | 32-bit counter 2 reload value (LSB) |
-| 62       | 0    | 32-bit counter 3 reload value (MSB) |
-| 63       | 0    | 32-bit counter 3 reload value       |
-| 64       | 0    | 32-bit counter 3 reload value       |
-| 65       | 0    | 32-bit counter 3 reload value (LSB) |
+## Misc. setup
 
-### Counter hysteresis
+ | Register   | Page   | Description |
+ | ---------- | ------ | ----------- |
+ | 44         | 0      | **Module Control register.**<br><br>This register is used for general module control and setup. Default value is 0x00.<br> <br>It is possible to control general module behavior in this register.<br> <br>**Bit 0** - Disable repeats from debounced input.<br>**Bit 1** - Reserved.<br>**Bit 2** - Reserved.<br>**Bit 3** - Reserved.<br>**Bit 4** - Reserved.<br>**Bit 5** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 7** - Enable weak pullups if set to 1. |
+  | 45         | 0      | **Input stream sample time.**<br><br>This is the time in seconds between input stream samples. Set to zero to disable.<br><br>Event [CLASS1.DATA, Type=1 I/O -- value](http://www.vscp.org/docs/vscpspec/doku.php?id=class1.data#type_1_0x01_i_o_value) is sent with data coding=0(bits), unit=0, sensor=0 for the inputs/outputs as set here. Two data bytes are sent with the following content.<br><br>**[Byte 0]**<br>**Bit 7** - Reserved.<br>**Bit 6** - Reserved.<br>**Bit 5** - Reserved.<br>**Bit 4** - reserved.<br>**Bit 3** - Reserved.<br>**Bit 2** - Reserved.<br>**Bit 1** - Channel 9.<br>**Bit 0** - Channel 8.<br><br>**[Byte 1]**<br>**Bit 7** - Channel 7.<br>**Bit 6** - Channel 6.<br>**Bit 5** - Channel 5.<br>**Bit 4** - Channel 4.<br>**Bit 3** - Channel 3.<br>**Bit 2** - Channel 2.<br>**Bit 1** - Channel 1.<br>**Bit 0** - Channel 0. |
+ | 46         | 0      | Debounce count. This value is the number of 10 ms periods an input signal should be low before it is considered to be active. Lower the value for higher sensitivity, higher for lower sensitivity. |
+ | 47         | 0      | Pulse length for short pulse (ms). This value is the number of milliseconds an output triggered by the [pulse action](http://www.grodansparadis.com/beijing/manual/doku.php?id=decisionmatrix) should be active (high). With the value set to zero the pulse will be the shortest possible the microprocessor can generate.<br><br>Actual pulse timing may vary for lower pulse length values. |
 
-| Register | Page | Description                       |
-| -------- | ---- | --------------------------------- |
-| 66       | 0    | 16-bit counter 0 hysteresis (MSB) |
-| 67       | 0    | 16-bit counter 0 hysteresis (LSB) |
-| 68       | 0    | 16-bit counter 1 hysteresis (MSB) |
-| 69       | 0    | 16-bit counter 1 hysteresis (LSB) |
-| 70       | 0    | 16-bit counter 2 hysteresis (MSB) |
-| 71       | 0    | 16-bit counter 2 hysteresis (LSB) |
-| 72       | 0    | 16-bit counter 3 hysteresis (MSB) |
-| 73       | 0    | 16-bit counter 3 hysteresis (LSB) |
-
-### Counter report interval
-
-| Register | Page | Description                                                         |
-| -------- | ---- | ------------------------------------------------------------------- |
-| 74       | 0    | Report interval for counter 0 in seconds. Set to zero to disable.   |
-| 75       | 0    | Report interval for counter 1 in seconds. Set to zero to disable.   |
-| 76       | 0    | Report interval for counter 2 in seconds. Set to zero to disable.   |
-| 77       | 0    | Report interval for counter 3 in seconds. Set to zero to disable.   |
-| 78       | 0    | Report interval for frequency 0 in seconds. Set to zero to disable. |
-
-### Frequency report interval
-
-| Register | Page | Description                                                         |
-| -------- | ---- | ------------------------------------------------------------------- |
-| 79       | 0    | Report interval for frequency 1 in seconds. Set to zero to disable. |
-| 80       | 0    | Report interval for frequency 2 in seconds. Set to zero to disable. |
-| 81       | 0    | Report interval for frequency 3 in seconds. Set to zero to disable. |
-
-### Measurements report interval
-
-| Register | Page | Description                                                           |
-| -------- | ---- | --------------------------------------------------------------------- |
-| 82       | 0    | Report interval for measurement 0 in seconds. Set to zero to disable. |
-| 83       | 0    | Report interval for measurement 1 in seconds. Set to zero to disable. |
-| 84       | 0    | Report interval for measurement 2 in seconds. Set to zero to disable. |
-| 85       | 0    | Report interval for measurement 3 in seconds. Set to zero to disable. |
-
-### Linearization information
-
-<table>
-<thead>
-<tr class="header">
-<th>Register</th>
-<th>Page</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>86</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 0<br />
-<br />
-<strong>bit 0</strong> - Calculate using counter if zero, frequency if one.<br />
-<strong>bit 1</strong> - Reserved.<br />
-<strong>bit 2</strong> - Reserved.<br />
-<strong>bit 3</strong> - Unit.<br />
-<strong>bit 4</strong> - Unit.<br />
-<strong>bit 5</strong> - Reserved.<br />
-<strong>bit 6</strong> - Class bit 8.<br />
-<strong>bit 7</strong> - Enable.<br />
-</td>
-</tr>
-<tr class="even">
-<td>87</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 0, VSCP Class low eight bits</td>
-</tr>
-<tr class="odd">
-<td>88</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 0, VSCP Type</td>
-</tr>
-<tr class="even">
-<td>89</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 1<br />
-<br />
-<strong>bit 0</strong> - Calculate using counter if zero, frequency if one.<br />
-<strong>bit 1</strong> - Reserved.<br />
-<strong>bit 2</strong> - Reserved.<br />
-<strong>bit 3</strong> - Unit.<br />
-<strong>bit 4</strong> - Unit.<br />
-<strong>bit 5</strong> - Reserved.<br />
-<strong>bit 6</strong> - Class bit 8.<br />
-<strong>bit 7</strong> - Enable.<br />
-</td>
-</tr>
-<tr class="odd">
-<td>90</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 1, VSCP Class low eight bits</td>
-</tr>
-<tr class="even">
-<td>91</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 1, VSCP Type</td>
-</tr>
-<tr class="odd">
-<td>92</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 2<br />
-<br />
-<strong>bit 0</strong> - Calculate using counter if zero, frequency if one.<br />
-<strong>bit 1</strong> - Reserved.<br />
-<strong>bit 2</strong> - Reserved.<br />
-<strong>bit 3</strong> - Unit.<br />
-<strong>bit 4</strong> - Unit.<br />
-<strong>bit 5</strong> - Reserved.<br />
-<strong>bit 6</strong> - Reserved.<br />
-<strong>bit 7</strong> - Class bit 8.<br />
-</td>
-</tr>
-<tr class="even">
-<td>93</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 2, VSCP Class low eight bits</td>
-</tr>
-<tr class="odd">
-<td>94</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 2, VSCP Type</td>
-</tr>
-<tr class="even">
-<td>95</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 3<br />
-<br />
-<strong>bit 0</strong> - Calculate using counter if zero, frequency if one.<br />
-<strong>bit 1</strong> - Reserved.<br />
-<strong>bit 2</strong> - Reserved.<br />
-<strong>bit 3</strong> - Unit.<br />
-<strong>bit 4</strong> - Unit.<br />
-<strong>bit 5</strong> - Class bit 8.<br />
-<strong>bit 6</strong> - Enable.<br />
-<strong>bit 7</strong> - Enable.<br />
-</td>
-</tr>
-<tr class="odd">
-<td>96</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 3, VSCP Class low eight bits</td>
-</tr>
-<tr class="even">
-<td>97</td>
-<td>0</td>
-<td>VSCP event information for linearization counter 3, VSCP Type</td>
-</tr>
-</tbody>
-</table>
 
 ## Page 1
 
-### Frequency
+## Output pulse time
 
-| Register | Page | Description                          |
-| -------- | ---- | ------------------------------------ |
-| 0        | 1    | 32-bit frequency for channel 0 (MSB) |
-| 1        | 1    | 32-bit frequency for channel 0       |
-| 2        | 1    | 32-bit frequency for channel 0       |
-| 3        | 1    | 32-bit frequency for channel 0 (LSB) |
-| 4        | 1    | 32-bit frequency for channel 1 (MSB) |
-| 5        | 1    | 32-bit frequency for channel 1       |
-| 6        | 1    | 32-bit frequency for channel 1       |
-| 7        | 1    | 32-bit frequency for channel 1 (LSB) |
-| 8        | 1    | 32-bit frequency for channel 2 (MSB) |
-| 9        | 1    | 32-bit frequency for channel 2       |
-| 10       | 1    | 32-bit frequency for channel 2       |
-| 11       | 1    | 32-bit frequency for channel 2 (LSB) |
-| 12       | 1    | 32-bit frequency for channel 3 (MSB) |
-| 13       | 1    | 32-bit frequency for channel 3       |
-| 14       | 1    | 32-bit frequency for channel 3       |
-| 15       | 1    | 32-bit frequency for channel 3 (LSB) |
 
-### Frequency low alarm level
+  | Register   | Page   | Description |
+  | ---------- | ------ | ----------- |
+  | 0          | 1      | **Output pulse time register for output 0 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 1          | 1      | **Output pulse time register for output 0 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 2          | 1      | **Output pulse time register for output 1 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 3          | 1      | **Output pulse time register for output 1 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 4          | 1      | **Output pulse time register for output 2 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 5          | 1      | **Output pulse time register for output 2 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 6          | 1      | **Output pulse time register for output 3 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 7          | 1      | **Output pulse time register for output 3 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 8          | 1      | **Output pulse time register for output 4 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 9          | 1      | **Output pulse time register for output 4 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 10         | 1      | **Output pulse time register for output 5 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 11         | 1      | **Output pulse time register for output 5 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 12         | 1      | **Output pulse time register for output 6 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 13         | 1      | **Output pulse time register for output 6 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 14         | 1      | **Output pulse time register for output 7 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 15         | 1      | **Output pulse time register for output 7 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 16         | 1      | **Output pulse time register for output 8 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 17         | 1      | **Output pulse time register for output 8 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 18         | 1      | **Output pulse time register for output 9 MSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off.<br>To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
+  | 19         | 1      | **Output pulse time register for output 9 LSB**<br><br>This is the pulse time for the each output expressed in seconds. This can be used to make an output turn on and off with a certain preset interval. The min pulse time is 1 second and the max time is 65535 seconds which is about 18 hours. Set to zero (default) for no pulse time i.e. the output will be steady on/off. To start a pulse sequence first write the pulse time to this register and then set the corresponding bit in the output status register for the channel to start the output. The pulse train is terminated by writing on or off (1 or 0) to the output status register.|
 
-| Register | Page | Description                                          |
-| -------- | ---- | ---------------------------------------------------- |
-| 16       | 1    | 32-bit frequency low alarm level for channel 0 (MSB) |
-| 17       | 1    | 32-bit frequency low alarm level for channel 0       |
-| 18       | 1    | 32-bit frequency low alarm level for channel 0       |
-| 19       | 1    | 32-bit frequency low alarm level for channel 0 (LSB) |
-| 20       | 1    | 32-bit frequency low alarm level for channel 1 (MSB) |
-| 21       | 1    | 32-bit frequency low alarm level for channel 1       |
-| 22       | 1    | 32-bit frequency low alarm level for channel 1       |
-| 23       | 1    | 32-bit frequency low alarm level for channel 1 (LSB) |
-| 24       | 1    | 32-bit frequency low alarm level for channel 2 (MSB) |
-| 25       | 1    | 32-bit frequency low alarm level for channel 2       |
-| 26       | 1    | 32-bit frequency low alarm level for channel 2       |
-| 27       | 1    | 32-bit frequency low alarm level for channel 2 (LSB) |
-| 28       | 1    | 32-bit frequency low alarm level for channel 3 (MSB) |
-| 29       | 1    | 32-bit frequency low alarm level for channel 3       |
-| 30       | 1    | 32-bit frequency low alarm level for channel 3       |
-| 31       | 1    | 32-bit frequency low alarm level for channel 3 (LSB) |
+## Protection time
 
-### Frequency high alarm level
+  | Register |  Page |  Description |
+  |----------|-------|--------------|
+  | 20       | 1     | **Output protection time register for output 0 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 21       | 1     | **Output protection time register for output 0 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours.|
+  | 22       | 1     | **Output protection time register for output 1 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours.The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 23       | 1     | **Output protection time register for output 1 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours.|
+  | 24       | 1     | **Output protection time register for output 2 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 25       | 1     | **Output protection time register for output 2 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 26       | 1     | **Output protection time register for output 3 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 27       | 1     | **Output protection time register for output 3 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 28       | 1     | **Output protection time register for output 4 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 29       | 1     | **Output protection time register for output 4 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 30       | 1     | **Output protection time register for output 5 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 31       | 1     | **Output protection time register for output 5 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 32       | 1     | **Output protection time register for output 6 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 33       | 1     | **Output protection time register for output 6 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 34       | 1     | **Output protection time register for output 7 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 35       | 1     | **Output protection time register for output 7 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 36       | 1     | **Output protection time register for output 8 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 37       | 1     | **Output protection time register for output 8 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 38       | 1     | **Output protection time register for output 9 MSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|
+  | 39       | 1     | **Output protection time register for output 9 LSB**<br><br>This is the output protection time. An output will be inactivated if not written to before this time has elapsed. Set to zero to disable (default). The max time is 65535 seconds which is about 18 hours. The registers can be as an example be used as a security feature to ensure that an output is deactivated after a preset time even if the controlling device failed to deactivate the output.|   
 
-| Register | Page | Description                                           |
-| -------- | ---- | ----------------------------------------------------- |
-| 32       | 1    | 32-bit frequency high alarm level for channel 0 (MSB) |
-| 33       | 1    | 32-bit frequency high alarm level for channel 0       |
-| 34       | 1    | 32-bit frequency high alarm level for channel 0       |
-| 35       | 1    | 32-bit frequency high alarm level for channel 0 (LSB) |
-| 36       | 1    | 32-bit frequency high alarm level for channel 1 (MSB) |
-| 37       | 1    | 32-bit frequency high alarm level for channel 1       |
-| 38       | 1    | 32-bit frequency high alarm level for channel 1       |
-| 39       | 1    | 32-bit frequency high alarm level for channel 1 (LSB) |
-| 40       | 1    | 32-bit frequency high alarm level for channel 2 (MSB) |
-| 41       | 1    | 32-bit frequency high alarm level for channel 2       |
-| 42       | 1    | 32-bit frequency high alarm level for channel 2       |
-| 43       | 1    | 32-bit frequency high alarm level for channel 2 (LSB) |
-| 44       | 1    | 32-bit frequency high alarm level for channel 3 (MSB) |
-| 45       | 1    | 32-bit frequency high alarm level for channel 3       |
-| 46       | 1    | 32-bit frequency high alarm level for channel 3       |
-| 47       | 1    | 32-bit frequency high alarm level for channel 3 (LSB) |
 
-### Frequency hysteresis
-
-| Register | Page | Description                         |
-| -------- | ---- | ----------------------------------- |
-| 48       | 1    | 16-bit frequency 0 hysteresis (MSB) |
-| 49       | 1    | 16-bit frequency 0 hysteresis (LSB) |
-| 50       | 1    | 16-bit frequency 1 hysteresis (MSB) |
-| 51       | 1    | 16-bit frequency 1 hysteresis (LSB) |
-| 52       | 1    | 16-bit frequency 2 hysteresis (MSB) |
-| 53       | 1    | 16-bit frequency 2 hysteresis (LSB) |
-| 54       | 1    | 16-bit frequency 3 hysteresis (MSB) |
-| 55       | 1    | 16-bit frequency 3 hysteresis (LSB) |
-
-## Page 2
-
-### Linearization constants
-
-| Register | Page | Description                                                        |
-| -------- | ---- | ------------------------------------------------------------------ |
-| 0        | 2    | 32-bit floating point linearization k-constant for channel 0 (MSB) |
-| 1        | 2    | 32-bit floating point linearization k-constant for channel 0       |
-| 2        | 2    | 32-bit floating point linearization k-constant for channel 0       |
-| 3        | 2    | 32-bit floating point linearization k-constant for channel 0 (LSB) |
-| 4        | 2    | 32-bit floating point linearization k-constant for channel 1 (MSB) |
-| 5        | 2    | 32-bit floating point linearization k-constant for channel 1       |
-| 6        | 2    | 32-bit floating point linearization k-constant for channel 1       |
-| 7        | 2    | 32-bit floating point linearization k-constant for channel 1 (LSB) |
-| 8        | 2    | 32-bit floating point linearization k-constant for channel 2 (MSB) |
-| 9        | 2    | 32-bit floating point linearization k-constant for channel 2       |
-| 10       | 2    | 32-bit floating point linearization k-constant for channel 2       |
-| 11       | 2    | 32-bit floating point linearization k-constant for channel 2 (LSB) |
-| 12       | 2    | 32-bit floating point linearization k-constant for channel 3 (MSB) |
-| 13       | 2    | 32-bit floating point linearization k-constant for channel 3       |
-| 14       | 2    | 32-bit floating point linearization k-constant for channel 3       |
-| 15       | 2    | 32-bit floating point linearization k-constant for channel 3 (LSB) |
-| 16       | 2    | 32-bit floating point linearization m-constant for channel 0 (MSB) |
-| 17       | 2    | 32-bit floating point linearization m-constant for channel 0       |
-| 18       | 2    | 32-bit floating point linearization m-constant for channel 0       |
-| 19       | 2    | 32-bit floating point linearization m-constant for channel 0 (LSB) |
-| 20       | 2    | 32-bit floating point linearization m-constant for channel 1 (MSB) |
-| 21       | 2    | 32-bit floating point linearization m-constant for channel 1       |
-| 22       | 2    | 32-bit floating point linearization m-constant for channel 1       |
-| 23       | 2    | 32-bit floating point linearization m-constant for channel 1 (LSB) |
-| 24       | 2    | 32-bit floating point linearization m-constant for channel 2 (MSB) |
-| 25       | 2    | 32-bit floating point linearization m-constant for channel 2       |
-| 26       | 2    | 32-bit floating point linearization m-constant for channel 2       |
-| 27       | 2    | 32-bit floating point linearization m-constant for channel 2 (LSB) |
-| 28       | 2    | 32-bit floating point linearization m-constant for channel 3 (MSB) |
-| 29       | 2    | 32-bit floating point linearization m-constant for channel 3       |
-| 30       | 2    | 32-bit floating point linearization m-constant for channel 3       |
-| 31       | 2    | 32-bit floating point linearization m-constant for channel 3 (LSB) |
-
-## Page 3
-
-| Register | Page | Description     |
-| -------- | ---- | --------------- |
-| 0-31     | 3    | Decision matrix |
-
-  
 [filename](./bottom-copyright.md ':include')

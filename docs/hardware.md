@@ -1,8 +1,8 @@
 
 ## Most current information
 
-You can find the most current information about the Accra module at it's repsitory <https://github.com/grodansparadis/can4vscp-accra> and in the documentation at 
-<https://grodansparadis.github.io/can4vscp-accra>. In the repository you can
+You can find the most current information about the Beijing module at it's repsitory <https://github.com/grodansparadis/can4vscp-Beijing> and in the documentation at 
+<https://grodansparadis.github.io/can4vscp-Beijing>. In the repository you can
 also find links to the latest firmware, drivers and schematics etc for
 its use. You can find links to where you can buy ready made modules here.
 
@@ -21,19 +21,19 @@ its use. You can find links to where you can buy ready made modules here.
 
 ## Schematics
 
-![accra_sch_rev_a.png](./images/accra_sch_rev_a.png)
+![Beijing_sch_rev_a.png](./images/Beijing_sch_rev_a.png)
 
 Schematics: Rev A (click picture to enlarge)
 
 ## Board components
 
-![accra_brd_rev_a.png](./images/accra_brd_rev_a.png)
+![Beijing_brd_rev_a.png](./images/Beijing_brd_rev_a.png)
 
 ## Connectors
 
 ### Terminal block
 
-![accra10_pinout.png](./images/accra10_pinout.png)
+![Beijing10_pinout.png](./images/Beijing10_pinout.png)
 
 | Pin | Description     |
 | --- | --------------- |
@@ -50,7 +50,7 @@ Schematics: Rev A (click picture to enlarge)
 | 11  | GND             |
 | 12  | \+5V            |
 
-![accra_components.png](./images/accra_components.png)
+![Beijing_components.png](./images/Beijing_components.png)
 
 ### Pull up's
 

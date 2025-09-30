@@ -1,12 +1,8 @@
-# Change Log for Accra
+# Change Log for Beijing
 
 Change log for the module is at
-[here](https://github.com/grodansparadis/can4vscp-accra/blob/master/HISTORY.txt)
+[here](https://github.com/grodansparadis/can4vscp-beijing/blob/master/HISTORY.txt)
 
-| Date | By | Description |
-| ---- | -- | ----------  |
-| 250113 | akhe | Fixed some links |
-| 220602 | akhe | Transferred to Markdown format |
 
   
 [filename](./bottom-copyright.md ':include')

@@ -1,17 +1,17 @@
-
+The alarm register is a bit field where each bit represents a certain alarm condition. The alarm register is read only.
 
 | Bit | Description       |
 | --- | ----------------- |
-| 0   | Alarm counter 0   |
-| 1   | Alarm counter 1   |
-| 2   | Alarm counter 2   |
-| 3   | Alarm counter 3   |
-| 4   | Alarm frequency 0 |
-| 5   | Alarm frequency 1 |
-| 6   | Alarm frequency 2 |
-| 7   | Alarm frequency 3 |
+| 0   | Protection timer elapsed. One of the protection timers has elapsed. |
+| 1   | High alarm. An input bit has gone high and the alarm condition for it is enabled.  |
+| 2   | Low alarm. An input bit has gone low and the alarm condition for it is enabled.  |
+| 3   | Reserved. |
+| 4   | Reserved. |
+| 5   | Reserved. |
+| 6   | Reserved. |
+| 7   | Reserved. |
 
-Remember that alarm bits are cleared when read.
+Alarm bits are cleared when read.
 
   
 [filename](./bottom-copyright.md ':include')

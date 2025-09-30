@@ -5,9 +5,11 @@
 [HISTORY](./history.md)
 
 
-![Accra](/images/beijing3.png)
+![Beijing](./images/beijing3.png)
 
-Beijing is a general I/O module that connects to a CAN4VSCP bus and can handle general I/O on ten channels that individually can be set as input or output. The module can be attached to a standard DIN Rail or be mounted directly on a wall (ordered as separate versions).
+Beijing is a general I/O module that connects to a CAN4VSCP bus and can handle general I/O on ten channels that individually can be set as input or output. The module can be attached to a standard DIN Rail or be mounted directly on a wall.
+
+The module can send events when an input changes state or on a regular basis. It can also be set to react on certain events by changing the state of one or more outputs. The module has a built in decision matrix for easy dynamic event handling.
 
 The module fully adopts to the CAN4VSCP specification and can be powered directly over the bus with a 9-28V DC power source. It has a rich register set for configuration and any information events defined. It also have a decision matrix for easy dynamic event handling.
 
@@ -17,31 +19,28 @@ All VSCP modules contains information of there own setup, manual, hardware versi
 
 When they are started up they have a default functionality that often is all that is needed to get a working setup. If the module have something to report it will send you an event and if it is setup to react on a certain type of event it will do it's work when you send event(s) to it. 
 
-* [Repository for the module](https://github.com/grodansparadis/can4vscp-bejing)
-  * This manual is available [here](https://grodansparadis.github.io/can4vscp-beijing/)
-  * Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp-beijing/tree/master/eagle)
-  * Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp-beijing/tree/master/firmware)
-  * [MDF for the module](https://github.com/grodansparadis/can4vscp-beijing/tree/master/mdf)
+* [Repository for the module](https://github.com/grodansparadis/can4vscp-beijing)
+* This manual is available [here](https://grodansparadis.github.io/can4vscp-beijing/)
+* Latest schema for the module is available [here](https://github.com/grodansparadis/can4vscp-beijing/blob/master/eagle/beijing_sch_rev_B.png)
+* Latest firmware for the module is available [here](https://github.com/grodansparadis/can4vscp-beijing/tree/master/firmware)
+* [MDF for the module](https://github.com/grodansparadis/can4vscp-beijing/tree/master/mdf)
 
 
 ## VSCP
 
 ![VSCP logo](./images/logo_100.png)
 
-VSCP is a free and open automation protocol for IoT and m2m devices. Visit [the VSCP site](https://www.vscp.org) for more information.
+VSCP is an automation protocol for IoT and m2m devices. Visit [the VSCP site](https://www.vscp.org) for more information.
 
 **VSCP is free.** Placed in the **public domain**. Free to use. Free to change. Free to do whatever you want to do with it. VSCP is not owned by anyone. VSCP will stay free and gratis forever.
 
-The specification for the VSCP protocol is [here](https://docs.vscp.org) 
+The specification for the VSCP protocol is [here](https://grodansparadis.github.io/vscp-doc-spec/#/) 
 
 VSCP documentation for various parts can be found [here](https://docs.vscp.org/).
 
 If you use VSCP please consider contributing resources or time to the project ([https://github.com/sponsors/grodansparadis](https://github.com/sponsors/grodansparadis)).
 ## Buy a module
 
-<img src="./images/grodan_logo.png" alt="Grodans Paradis AB" width="200"/>
-
-Ready made modules can be bought from [Grodans Paradis AB](https://www.grodansparadis.com).
 
 ## Document license
 
