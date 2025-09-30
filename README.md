@@ -40,7 +40,7 @@ This project is part of the <a href="http://www.vscp.org">VSCP (Very Simple Cont
   * [MDF file version: 1.0.0 Release date: 2015-06-15](http://www.eurosource.se/beijing_1.xml)
 
 ### Support
-If you need support, please open an issue in the [GitHub repository](https://github.com/grodansparadis/can4vscp-kelvin_ntc10k/issues).
+If you need support, please open an issue in the [GitHub repository](https://github.com/grodansparadis/can4vscp-beijing/issues).
 
 ### Buy a ready made modules
 You can buy a ready made module from [Grodans Paradis](http://www.grodansparadis.com).
