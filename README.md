@@ -1,4 +1,4 @@
-<h1>CAN4VSCP Beijing module</h1>
+# CAN4VSCP Beijing module
 
 <img src="./docs/images/beijing3.png" /> 
 
